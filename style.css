@@ -1,29 +1,68 @@
 *, *::before *::after {
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: rgba(78, 112, 62, 0.397);
+    background-color: rgba(41, 54, 35, 0.76);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 .clock {
     width: 300px;
     height: 300px;
-    background-color: rgba(255, 255, 255, .8);
+    background: rgb(244, 255, 244);
+    background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 50%), 
+    linear-gradient(135deg, #ccc 25%, transparent 50%),
+    linear-gradient(45deg, transparent 50%, #ccc 75%),
+    linear-gradient(135deg, transparent 50%, #ccc 75%);
+    background-size:25px 25px;
+    background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; 
     border-radius: 50%;
-    border: 20px solid rgb(92, 92, 92);
+    border: 15px solid rgb(184, 184, 184);
     position: relative;
 }
 
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(9, 61, 11);
+    z-index: 11;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    background-color: rgb(28, 94, 30);
+    z-index: 12;
+    width: 4px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
 .clock .number {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
      --rotation: 0;
+     font-weight: 800;
 position: absolute;
 width: 100%;
 height: 100%;
 text-align: center;
+color: rgb(31, 82, 34);
+font-size: 2rem;
 transform: rotate(30deg);
     transform: rotate(var(--rotation));
 }
@@ -45,10 +84,27 @@ transform: rotate(30deg);
     position: absolute;
     bottom: 50%;
     left: 50%;
-    width: 10px;
-    height: 40%;
+    border-radius: 10px;
     background-color: black;
-    border: 10px green;
         transform-origin: bottom;
+        z-index: 10;
         transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+
+.clock .hand.second {
+width: 2px;
+height: 42%;
+background-color: rgb(255, 0, 0);
+}
+
+.clock .hand.minute {
+width: 4px;
+height: 36%;
+background-color: rgb(31, 82, 34);
+}
+
+.clock .hand.hour {
+width: 6px;
+height: 24%;
+background-color: rgb(31, 82, 34);
 }
