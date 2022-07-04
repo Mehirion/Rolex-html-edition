@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: rgba(41, 54, 35, 0.76);
+    background-color: rgb(44, 28, 28);
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
@@ -15,23 +15,23 @@ body {
 .clock {
     width: 300px;
     height: 300px;
-    background: rgb(244, 255, 244);
+    background: rgb(65, 65, 65);
     background-image:
-    linear-gradient(45deg, #ccc 25%, transparent 50%), 
-    linear-gradient(135deg, #ccc 25%, transparent 50%),
-    linear-gradient(45deg, transparent 50%, #ccc 75%),
-    linear-gradient(135deg, transparent 50%, #ccc 75%);
+    linear-gradient(45deg, rgb(77, 77, 77) 25%, transparent 50%), 
+    linear-gradient(135deg, rgb(77, 77, 77) 25%, transparent 50%),
+    linear-gradient(45deg, transparent 50%, rgb(77, 77, 77) 75%),
+    linear-gradient(135deg, transparent 50%, rgb(77, 77, 77) 75%);
     background-size:25px 25px;
     background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; 
     border-radius: 50%;
-    border: 15px solid rgb(184, 184, 184);
+    border: 15px solid rgb(65, 65, 65);
     position: relative;
 }
 
 .clock::after{
     content: '';
     position: absolute;
-    background-color: rgb(9, 61, 11);
+    background-color: rgb(149, 150, 85);
     z-index: 11;
     width: 8px;
     height: 8px;
@@ -44,7 +44,7 @@ body {
 .clock::before{
     content: '';
     position: absolute;
-    background-color: rgb(28, 94, 30);
+    background-color: rgb(220, 223, 58);
     z-index: 12;
     width: 4px;
     height: 4px;
@@ -54,6 +54,19 @@ body {
     border-radius: 50%;
 }
 
+.clock .number12 {
+color: rgb(48, 212, 48);
+--rotation: 0;
+font-weight: 800;
+position: absolute;
+width: 100%;
+height: 100%;
+text-align: center;
+font-size: 2rem;
+transform: rotate(30deg);
+transform: rotate(var(--rotation))
+}
+
 .clock .number {
      --rotation: 0;
      font-weight: 800;
@@ -61,11 +74,13 @@ position: absolute;
 width: 100%;
 height: 100%;
 text-align: center;
-color: rgb(31, 82, 34);
+color: rgb(227, 230, 100);
 font-size: 2rem;
 transform: rotate(30deg);
-    transform: rotate(var(--rotation));
+    transform: rotate(var(--rotation))
 }
+
+
 
 .clock .number1 {--rotation: 30deg;}
 .clock .number2 {--rotation: 60deg;}
@@ -100,11 +115,11 @@ background-color: rgb(255, 0, 0);
 .clock .hand.minute {
 width: 4px;
 height: 36%;
-background-color: rgb(31, 82, 34);
+background-color: rgb(227, 230, 100);
 }
 
 .clock .hand.hour {
 width: 6px;
 height: 24%;
-background-color: rgb(31, 82, 34);
+background-color: rgb(227, 230, 100);
 }
